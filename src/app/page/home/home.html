@@ -1,0 +1,14 @@
+@if(appServe.pokemon.isLoading()){
+    <app-loader></app-loader>
+}
+@else {
+    <div>
+        <input #pokemonInput>
+        <button (click)="appServe.pokemonName.set(pokemonInput.value)">Charger un autre pokemeon</button>
+    </div>
+    <p>
+        <img [src]="appServe.pokemon.value()!.sprites.front_default" alt="">
+        <img [src]="appServe.pokemon.value()!.sprites.back_default" alt="">
+    </p>
+}
+

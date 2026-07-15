@@ -1,0 +1,9 @@
+@if (appServices.pokemon.isLoading()) {
+    <app-loader></app-loader>
+}
+@else {
+    @for (type of appServices.pokemon.value()!.types; track type.slot) {
+        <p>{{type.type.name}}</p>
+    }
+
+}
